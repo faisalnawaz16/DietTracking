@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkblue"
+    tools:context=".set_diet_pcf">
+
+
+    <Button
+        android:id="@+id/btnDietAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="142dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="214dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="#FFFFFF"
+        android:text="Submit"
+        android:textColor="@color/common_google_signin_btn_text_light_pressed"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="142dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="116dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/darkred"
+        android:text="Logout"
+        android:textColor="@color/whitesmoke"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <EditText
+        android:id="@+id/inputPrtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="507dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Dummy Input" />
+
+    <EditText
+        android:id="@+id/inputCarbs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="429dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Dummy Input" />
+
+    <EditText
+        android:id="@+id/inputFats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="346dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Dummy Input" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="625dp"
+        android:text="Set Diet Limit for a Day"
+        android:textSize="26sp"
+        android:backgroundTint="@color/darkblue"
+        android:textColor="#FFFFFF"/>
+
+</RelativeLayout>
