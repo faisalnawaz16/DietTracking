@@ -4,20 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkblue"
+    android:background="@color/darkorchid"
     tools:context=".set_diet_pcf">
 
 
-    <Button
-        android:id="@+id/btnDietAdd"
+    <TextView
+        android:id="@+id/textViewTotalMeal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="142dp"
-        android:layout_marginEnd="142dp"
-        android:layout_marginBottom="214dp"
+        android:layout_marginStart="137dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="541dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/btnDietAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="153dp"
+        android:layout_marginBottom="155dp"
         android:background="@drawable/button_shape"
         android:backgroundTint="#FFFFFF"
         android:text="Submit"
@@ -27,14 +41,14 @@
 
     <Button
         android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="117dp"
+        android:layout_height="42dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="142dp"
-        android:layout_marginEnd="142dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="95dp"
         android:background="@drawable/button_shape"
         android:backgroundTint="@color/darkred"
         android:text="Logout"
@@ -45,58 +59,94 @@
     <EditText
         android:id="@+id/inputPrtn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="39dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="507dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="349dp"
+        android:background="@color/white"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Dummy Input" />
+        android:inputType="number"
+        android:text="Enter Protiens" />
 
     <EditText
         android:id="@+id/inputCarbs"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="429dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="283dp"
+        android:background="@color/white"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Dummy Input" />
+        android:inputType="number"
+        android:text="Enter Carbs" />
 
     <EditText
         android:id="@+id/inputFats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="204dp"
+        android:layout_height="42dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="346dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="221dp"
+        android:background="@color/white"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Dummy Input" />
+        android:inputType="number"
+        android:text="Enter Fats" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="65dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="625dp"
-        android:text="Set Diet Limit for a Day"
-        android:textSize="26sp"
+        android:layout_marginTop="281dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="418dp"
         android:backgroundTint="@color/darkblue"
-        android:textColor="#FFFFFF"/>
+        android:text="Enter The Quantity of the Each PCF"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/textViewLabel"
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="597dp"
+        android:background=""
+        android:text="Todays Target"
+        android:textColor="@color/bisque"
+        android:textSize="26sp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/btnDisplayDiet"
+        android:layout_width="125dp"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="479dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/darkred"
+        android:text="Display"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
 </RelativeLayout>

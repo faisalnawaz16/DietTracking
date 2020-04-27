@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,12 +17,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 
-public class login extends AppCompatActivity {
+public class login extends AppCompatActivity implements View.OnClickListener{
     FirebaseAuth authFirebase;
-    private FirebaseAuth.AuthStateListener authAuthstate;
-
     EditText emaill,passwordl;
     TextView txtSignUp;
     Button btnLogIN;
@@ -30,89 +30,66 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        authFirebase=FirebaseAuth.getInstance();
-        emaill=findViewById(R.id.lgnEmail);
-        passwordl=findViewById(R.id.lgnPassword);
-        txtSignUp=(TextView)findViewById(R.id.textViewSignup);
-        btnLogIN=findViewById(R.id.lgnButton);
+        authFirebase = FirebaseAuth.getInstance();
+        emaill = findViewById(R.id.lgnEmail);
+        passwordl = findViewById(R.id.lgnPassword);
+        txtSignUp = (TextView) findViewById(R.id.textViewSignup);
+        btnLogIN = findViewById(R.id.lgnButton);
+        btnLogIN.setOnClickListener(this);
+        txtSignUp.setOnClickListener(this);
+    }
 
-        authAuthstate = new FirebaseAuth.AuthStateListener() {
+    private void userLogin(){
+        String emailID = emaill.getText().toString().trim();
+        String pwd = passwordl.getText().toString().trim();
+        if (emailID.isEmpty()) {
+            emaill.setError("Please Enter Email");
+            emaill.requestFocus();
+            return;
+        }
+        if(!Patterns.EMAIL_ADDRESS.matcher(emailID).matches()) {
+            emaill.setError("Please Enter Valid Email");
+            emaill.requestFocus();
+            return;
+        }
+        if (pwd.isEmpty()) {
+            passwordl.setError("Enter Password");
+            passwordl.requestFocus();
+            return;
+        }
+        if(pwd.length()<6){
+            passwordl.setError("Password Must be of 6 Characters");
+            passwordl.requestFocus();
+            return;
+        }
+
+        authFirebase.signInWithEmailAndPassword(emailID,pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser currentUser= authFirebase.getCurrentUser();
-                if(currentUser!=null)
-                {
-                    Toast.makeText(login.this,"You are logged in Successfully..!",Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(login.this,set_diet_pcf.class);
-                    startActivity(i);
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+
+                    Toast.makeText(login.this,"Sign In Successful",Toast.LENGTH_SHORT).show();
+                    Intent homePage=new Intent(login.this,HomePage.class);
+                    homePage.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(homePage);
 
                 }
-                else
-                {
-                    Toast.makeText(login.this,"Please Log in to Continue",Toast.LENGTH_LONG).show();
-                }
+                else {
+                        Toast.makeText(login.this,"Error Occured,Please try Again!",Toast.LENGTH_SHORT).show();
 
-            }
-        };
-        btnLogIN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String lgEmailID= emaill.getText().toString();
-                String lgPwd= passwordl.getText().toString();
-                if(lgEmailID.isEmpty())
-                {
-                    emaill.setError("Please Enter Error");
-                    emaill.requestFocus();
-                }
-                else if(lgPwd.isEmpty())
-                {
-                    passwordl.setError("Enter Password");
-                    passwordl.requestFocus();
-                }
-                else if(lgEmailID.isEmpty() && lgPwd.isEmpty())
-                {
-                    emaill.setError("Please Enter Error");
-                    passwordl.setError("Enter Password");
-                    emaill.requestFocus();
-                    passwordl.requestFocus();
-                    Toast.makeText(login.this,"Fields are Empty",Toast.LENGTH_LONG).show();
-                }
-                else if(!lgEmailID.isEmpty() && lgPwd.isEmpty())
-                {
-                    authFirebase.signInWithEmailAndPassword(lgEmailID,lgPwd).addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(!task.isSuccessful())
-                            {
-                                Toast.makeText(login.this,"Login Failed/Wrong Credentials",Toast.LENGTH_LONG).show();
-                            }
-                            else
-                            {
-                                Intent setDiet= new Intent(login.this,set_diet_pcf.class);
-                                startActivity(setDiet);
-                            }
-                        }
-                    });
-                }
-                else
-                {
-                    Toast.makeText(login.this,"Please Sign Up to Login",Toast.LENGTH_LONG).show();
                 }
             }
         });
-
-       txtSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(login.this,Login_Signup.class));
-            }
-        }
-        );
     }
-
     @Override
-    protected void onStart() {
-        super.onStart();
-        authFirebase.addAuthStateListener(authAuthstate);
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.textViewSignup:
+                startActivity(new Intent(login.this,Login_Signup.class));
+                break;
+                case R.id.lgnButton:
+                    userLogin();
+                    break;
+        }
     }
 }

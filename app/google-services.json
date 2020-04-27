@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "530119706659",
-    "firebase_url": "https://dieatappdb.firebaseio.com",
-    "project_id": "dieatappdb",
-    "storage_bucket": "dieatappdb.appspot.com"
+    "project_number": "819201422495",
+    "firebase_url": "https://dietappdb-c8884.firebaseio.com",
+    "project_id": "dietappdb-c8884",
+    "storage_bucket": "dietappdb-c8884.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:530119706659:android:a48c43fd0165435b634996",
+        "mobilesdk_app_id": "1:819201422495:android:cb14a4c3e1d9e852451eaa",
         "android_client_info": {
           "package_name": "com.example.dietapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "530119706659-ua2j079m8ejdcp8g2kikmuvpqpr6k9vk.apps.googleusercontent.com",
+          "client_id": "819201422495-r8gcl7acj6o56q83cc04427vh5knfkg0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.dietapp",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "530119706659-f3vfbivbsdka90ghbqb4lnpul57dck1j.apps.googleusercontent.com",
+          "client_id": "819201422495-5ttk21jc3c85famf13j1qb28ovdons6d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDzUGQB7rCb59Sy7untSnVLivaNSgz_ttc"
+          "current_key": "AIzaSyACNytBmN_Hfwfn7-tVITbnoeWdm3j4TKk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "530119706659-f3vfbivbsdka90ghbqb4lnpul57dck1j.apps.googleusercontent.com",
+              "client_id": "819201422495-5ttk21jc3c85famf13j1qb28ovdons6d.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

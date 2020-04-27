@@ -20,7 +20,7 @@ Button btnQuit;
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(diet_remaining.this,MainActivity.class));
+                startActivity(new Intent(diet_remaining.this,HomePage.class));
                 new diet_remaining().finish();
                 System.exit(0);
             }
