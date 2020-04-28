@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     TextView mDateTime;
     FirebaseUser cUser;
     String CurrentUserID;
+    FirebaseAuth userAuth;
 
     DatabaseReference databaseDietAPPDB;
     @Override
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         databaseDietAPPDB= FirebaseDatabase.getInstance().getReference("SetMealForTheDay");
+        //FirebaseUser cUser = userAuth.getCurrentUser();
+        //String userEmail = cUser.getEmail().toString().trim();
 
         Calendar mealCalendar = Calendar.getInstance();
         String mealsCurrentDate = DateFormat.getDateInstance(DateFormat.FULL).format(mealCalendar.getTime());
@@ -56,11 +59,12 @@ public class MainActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //totalMeal();
+
                 Submit();
-                startActivity(new Intent(MainActivity.this, set_diet_pcf.class));
-                new MainActivity().finish();
-                System.exit(0);
+
+                Intent intent=new Intent(MainActivity.this, set_diet_pcf.class);
+                startActivity(intent);
+
 
             }
         });
@@ -72,15 +76,25 @@ public class MainActivity extends AppCompatActivity {
         String CarbsQuantity=inuptCarbs.getText().toString().trim();
         String FatsQuantity=inuptFats.getText().toString().trim();
 
-        if(!(ProtienQuantity.isEmpty() && CarbsQuantity.isEmpty() && FatsQuantity.isEmpty())){
+        if(!(ProtienQuantity.isEmpty() ||FatsQuantity.isEmpty() || CarbsQuantity.isEmpty()))
+        {
+
+
             String id=mDateTime.getText().toString().trim();
-            SetMeal setMeal= new SetMeal(id,ProtienQuantity,CarbsQuantity,FatsQuantity);
+            SetMeal setMeal;
+            setMeal = new SetMeal(id,ProtienQuantity,CarbsQuantity,FatsQuantity);
             databaseDietAPPDB.child(id).setValue(setMeal);
             Toast.makeText(this,"Diet Added For the Day",Toast.LENGTH_LONG).show();
+
+
+
 
         }
         else
         {
+            inuptProtien.setError("Please Enter Valid Value");
+            inuptFats.setError("Please Enter Valid Value");
+            inuptCarbs.setError("Please Enter Valid Value");
             Toast.makeText(this,"You Should Enter Value",Toast.LENGTH_LONG).show();
         }
     }

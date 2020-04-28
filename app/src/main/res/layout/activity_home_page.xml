@@ -14,7 +14,7 @@
         android:layout_marginStart="161dp"
         android:layout_marginTop="164dp"
         android:layout_marginEnd="162dp"
-        android:background="@drawable/button_shape"
+
         android:backgroundTint="@color/green"
         android:hint="Protien,Carbs And Fats"
         android:text="Enteal Your Meal PCF"
@@ -22,10 +22,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.246" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <Button
         android:id="@+id/btnCheckRemainig"
@@ -34,36 +34,35 @@
         android:layout_marginStart="161dp"
         android:layout_marginTop="164dp"
         android:layout_marginEnd="162dp"
-        android:background="@drawable/button_shape"
+
         android:backgroundTint="@color/green"
         android:text="See Remaining Diet Plan"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477" />
+        app:layout_constraintVertical_bias="0.537" />
 
     <Button
         android:id="@+id/btnLogoutMain"
-        android:layout_width="226dp"
-        android:layout_height="61dp"
+        android:layout_width="157dp"
+        android:layout_height="45dp"
         android:layout_marginStart="161dp"
         android:layout_marginTop="164dp"
         android:layout_marginEnd="162dp"
-        android:background="@drawable/button_shape"
-        android:backgroundTint="@color/darkred"
+        android:backgroundTint="@color/blueviolet"
         android:text="Logout"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.734" />
+        app:layout_constraintVertical_bias="0.722" />
 
     <Button
         android:id="@+id/btnMainActivity"
@@ -71,33 +70,59 @@
         android:layout_height="64dp"
         android:layout_marginStart="161dp"
         android:layout_marginEnd="162dp"
-        android:background="@drawable/button_shape"
+
         android:backgroundTint="@color/green"
         android:text="Set or Update your Diet"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.248" />
+        app:layout_constraintVertical_bias="0.382" />
 
-    <TextView
-        android:id="@+id/loggedUserEmail"
-        android:layout_width="250dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="167dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="186dp"
-        android:layout_marginBottom="88dp"
-        android:text="EmailOfCurrentUser"
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="103dp"
+        android:layout_height="64dp"
+        android:backgroundTint="@color/black"
+        android:text="History"
         android:textColor="@color/white"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnMainActivity"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/loggedUserEmail"
+        android:layout_width="210dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="88dp"
+        android:text="EmailOfCurrentUser"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.286" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="145dp"
+        android:layout_height="117dp"
+        android:background="@drawable/trackdietlogo"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 </androidx.constraintlayout.widget.ConstraintLayout>

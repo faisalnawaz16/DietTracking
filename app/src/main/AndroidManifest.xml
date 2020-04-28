@@ -23,7 +23,9 @@
         <activity android:name=".Login_Signup"></activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".diet_remaining" />
-        <activity android:name=".set_diet_pcf" />
+        <activity android:name=".set_diet_pcf">
+
+        </activity>
     </application>
 
 </manifest>
