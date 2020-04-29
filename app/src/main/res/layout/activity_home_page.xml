@@ -12,27 +12,24 @@
         android:layout_width="286dp"
         android:layout_height="59dp"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="164dp"
         android:layout_marginEnd="162dp"
 
         android:backgroundTint="@color/green"
-        android:hint="Protien,Carbs And Fats"
-        android:text="Enteal Your Meal PCF"
+        android:hint="Protein,Carbs And Fats"
+        android:text="Enter Your Meal PCF"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnCheckRemainig"
         android:layout_width="285dp"
         android:layout_height="63dp"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="164dp"
         android:layout_marginEnd="162dp"
 
         android:backgroundTint="@color/green"
@@ -41,10 +38,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537" />
+        app:layout_constraintVertical_bias="0.622" />
 
     <Button
         android:id="@+id/btnLogoutMain"
@@ -66,8 +63,8 @@
 
     <Button
         android:id="@+id/btnMainActivity"
-        android:layout_width="278dp"
-        android:layout_height="64dp"
+        android:layout_width="288dp"
+        android:layout_height="62dp"
         android:layout_marginStart="161dp"
         android:layout_marginEnd="162dp"
 
@@ -77,10 +74,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintVertical_bias="0.381" />
 
     <Button
         android:id="@+id/btnHistory"

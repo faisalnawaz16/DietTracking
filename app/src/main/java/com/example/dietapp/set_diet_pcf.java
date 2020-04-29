@@ -28,7 +28,7 @@ import java.util.EventListener;
 
 
 public class set_diet_pcf extends AppCompatActivity {
-    Button btnSubmitNext,btndisplay;
+    Button btnSubmitNext,btndisplay,btnbackHome;
     Button btnLgout;
     EditText inpPTN,inpCBS,inpFTS;
     TextView sumofMeal,pValue,cValue,fValue;
@@ -54,6 +54,7 @@ public class set_diet_pcf extends AppCompatActivity {
         mDateTime = mealsCurrentDate;
 
         btnSubmitNext= (Button)findViewById(R.id.btnDietCalculate);
+        btnbackHome=findViewById(R.id.btnBackHome);
         btndisplay=findViewById(R.id.btnDietTotal);
         btnLgout=(Button)findViewById(R.id.btnLogout);
         inpPTN=findViewById(R.id.inputPrtn);
@@ -71,6 +72,14 @@ public class set_diet_pcf extends AppCompatActivity {
 
 
 
+
+btnbackHome.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(set_diet_pcf.this,HomePage.class));
+        finish();
+    }
+});
 
 
         btndisplay.setOnClickListener(new View.OnClickListener() {

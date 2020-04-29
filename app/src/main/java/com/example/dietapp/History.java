@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -25,14 +28,22 @@ public class History extends AppCompatActivity {
     ListView myListview;
     ArrayList myArrayList= new ArrayList<>();//Creating Array List
     DatabaseReference dbReference;
+    Button btnBack;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+        btnBack= findViewById(R.id.btnBackfHist);
 
-
+btnBack.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(History.this,HomePage.class));
+        finish();
+    }
+});
 
         final ArrayAdapter<String> MyArrayAdapter= new ArrayAdapter<String>(History.this,android.R.layout.simple_list_item_1,myArrayList);
         myListview=findViewById(R.id.listviewMealHistory);//List View
